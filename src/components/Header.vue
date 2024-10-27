@@ -36,6 +36,7 @@
     height: 60px;
     justify-content: space-between;
     padding: 0 20px;
+    border-bottom: #f0f0f0 2px solid;
 }
 
 .logo {
