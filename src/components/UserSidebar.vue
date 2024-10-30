@@ -12,7 +12,6 @@
     align-items: center;
     gap: 10px;
     padding: 5px 10px;
-    /* border: 1px solid red; */
     cursor: pointer;
     position: relative;
 }

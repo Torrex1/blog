@@ -20,9 +20,12 @@
     width: 220px;
     height: 100vh;
     background-color: #f3f3f3;
+    border: 1px solid rgb(207, 212, 221);
+    border-radius: 2px;
     margin-top: 1px;
     overflow-y: auto;
     padding: 5px 0;
+    z-index: 100;
 }
 
 h3 {
