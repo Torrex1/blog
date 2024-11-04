@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h3>Your Friends</h3>
         <!-- убрать в компонент {list} -->
-        <ul style="display: grid; grid-template-columns: 1fr; gap: 5px;">
+        <ul>
             <li>    
                 <UserSidebar />
             </li>
@@ -15,7 +15,7 @@
 </script>
 
 <style scoped>
-.wrapper {
+/* .wrapper {
     position: fixed;
     width: 220px;
     height: 100vh;
@@ -25,7 +25,18 @@
     margin-top: 1px;
     overflow-y: auto;
     padding: 5px 0;
-    z-index: 100;
+} */
+ .wrapper {
+    position: fixed;
+    width: 220px;
+    border: 1px solid blue;
+    height: 100vh;
+    background-color: #f7f7fa;
+    border: 1px solid rgb(207, 212, 221);
+    border-radius: 2px;
+    margin-top: 1px;
+    overflow-y: auto;
+    padding: 5px 0;
 }
 
 h3 {
