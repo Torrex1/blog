@@ -3,8 +3,7 @@
 
         <div class="logo">
             <img src="../assets/logo.png" alt="logo">
-
-            <h2>JUST BLOG</h2>
+            <h2>FLU<span class="flipped-text">vv</span>ER</h2>
         </div>
         
         <!-- убрать в свой компонент -->
@@ -24,7 +23,6 @@
             </div>
         </div>
         
-
     </div>
     
 </template>
@@ -37,15 +35,27 @@
     justify-content: space-between;
     padding: 0 20px;
     border-bottom: #f0f0f0 2px solid;
+    z-index: 20;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .logo img {
     width: 70px;
+}
+
+.flipped-text {
+    color: rgb(57, 160, 57);
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+h2:hover .flipped-text  {
+    transform: rotateX(180deg);
 }
 
 .search-field {
