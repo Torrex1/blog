@@ -30,6 +30,11 @@ button:hover {
     background-color: green;
 }
 
+button:focus {
+    border: 3px solid green;
+    outline: unset;
+}
+
 time {
     font-size: 12px;
     color: gray;
