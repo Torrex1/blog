@@ -14,6 +14,7 @@
     padding: 5px 10px;
     cursor: pointer;
     position: relative;
+    border-radius: 2px;
 }
 
 .sidebar-user:hover {

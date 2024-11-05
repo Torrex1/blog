@@ -8,7 +8,7 @@
         
         <!-- убрать в свой компонент -->
         <div class="search-field">
-            <input type="text">
+            <input placeholder="Search new friends" type="text">
             <button><div class="search-icon"></div></button>
         </div>
 
@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    user-select: none;
 }
 
 .logo img {
@@ -66,7 +67,7 @@ h2:hover .flipped-text  {
 
 .search-field input {
     width: 400px;
-    height: 30px;
+    height: 35px;
     border: 1px solid #ada8a8;
     border-radius: 4px 0 0 4px;
     padding: 10px;
@@ -79,8 +80,8 @@ h2:hover .flipped-text  {
 }
 
 .search-field button {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
