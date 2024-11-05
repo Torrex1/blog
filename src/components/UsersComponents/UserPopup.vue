@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" @click.self="closeModal">
         <div class="user-popup">
             <div class="user-unit">
                 <img src="https://ui-avatars.com/api/?name=Tarikuliev&rounded=true&background=f8ebf4&color=d36ba9" alt="">
@@ -13,6 +13,16 @@
         </div>
     </div>
 </template>
+
+<script setup>
+    import { useModalStore } from '../../store/modalStore';
+
+    const modalStore = useModalStore();
+
+    const closeModal = () => {
+        modalStore.closeModal();
+    }
+</script>
 
 <style scoped>
 .wrapper {
@@ -57,6 +67,7 @@
     border: 1px solid rgb(219, 205, 205);
     border-radius: 50%;
     cursor: pointer;
+    user-select: none;
 }
 
 .logout {
@@ -66,6 +77,7 @@
     cursor: pointer;
     padding: 10px 5px;
     border-radius: 5px;
+    user-select: none;
 }
 
 .logout img {
