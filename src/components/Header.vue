@@ -31,13 +31,13 @@
     padding: 0 20px;
     border-bottom: #f0f0f0 2px solid;
     z-index: 20;
+    user-select: none;
 }
 
 .logo {
     display: flex;
     align-items: center;
     cursor: pointer;
-    user-select: none;
 }
 
 .logo img {
