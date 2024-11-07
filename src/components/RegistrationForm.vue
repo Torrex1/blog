@@ -1,13 +1,13 @@
 <template>
     <div class="form-wrapper">
-        <form action="#">
+        <form action="/">
             <h1>Sign up</h1>
 
             <input type="text" placeholder="username">
             <input type="email" placeholder="email">
             <input type="password" placeholder="password">
-            <input type="password" placeholder="confirm your password">
-            <button>Let's go!</button>
+            <input type="password" placeholder="confirm password">
+            <button type="submit">Let's go!</button>
         </form>
     </div>
     
@@ -16,10 +16,10 @@
 <style scoped>
 .form-wrapper {
     display: flex;
-    border: 1px solid red;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
 }
 
 h1 {
@@ -28,7 +28,8 @@ h1 {
 }
 
 form {
-    border: 1px solid blue;
+    background-color: #fff;
+    border-radius: 25px 5px 25px 25px;
     display: flex;
     flex-direction: column;
     
@@ -53,6 +54,19 @@ button {
     cursor: pointer;
     border: unset;
     font-size: 16px;
+}
+
+button:focus-visible {
+    outline: 2px solid green;
+}
+
+button:hover {
+    background-color: rgb(4, 166, 4);
+    color: #fff;
+}
+
+button:active {
+    background-color: rgb(0, 148, 0);
 }
 
 </style>
