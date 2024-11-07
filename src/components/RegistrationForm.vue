@@ -1,5 +1,5 @@
 <template>
-    <div class="form-wrapper">
+    <div class="register-wrapper">
         <form action="/">
             <h1>Sign up</h1>
 
@@ -10,13 +10,13 @@
             <button type="submit">Let's go!</button>
 
         </form>
-        <p>Already have an account? <RouterLink to="/"><span style="color: green;">Log in</span></RouterLink></p>
+        <p>Already have an account? <RouterLink to="/login"><span style="color: green;">Log in</span></RouterLink></p>
     </div>
     
 </template>
 
 <style scoped>
-.form-wrapper {
+.register-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -43,7 +43,6 @@ form {
 
 input {
     padding: 10px;
-    /* border-radius: 5px; */
     border: unset;
     border-bottom: 1px solid #ccc;
     outline: unset;
