@@ -8,7 +8,9 @@
             <input type="password" placeholder="password">
             <input type="password" placeholder="confirm password">
             <button type="submit">Let's go!</button>
+
         </form>
+        <p>Already have an account? <RouterLink to="/"><span style="color: green;">Log in</span></RouterLink></p>
     </div>
     
 </template>
@@ -16,6 +18,8 @@
 <style scoped>
 .form-wrapper {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     height: 100vh;
