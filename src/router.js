@@ -10,6 +10,10 @@ const routes = [
         path: "/registration", 
         component: () => import("./pages/RegistrationPage.vue") 
     },
+    {
+        path: "/login",
+        component: () => import("./pages/LoginPage.vue")
+    }
 ]
 
 export const router = createRouter({
