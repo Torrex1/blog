@@ -1,11 +1,11 @@
 <template>
     <div class="register-wrapper">
-        <form action="/">
+        <form action="/" @submit.prevent="registerUser">
             <h1>Sign up</h1>
 
-            <input type="text" placeholder="username">
-            <input type="email" placeholder="email">
-            <input type="password" placeholder="password">
+            <input v-model="username" type="text" placeholder="username">
+            <input v-model="email" type="email" placeholder="email">
+            <input v-model="password" type="password" placeholder="password">
             <input type="password" placeholder="confirm password">
             <button type="submit">Let's go!</button>
 
@@ -14,6 +14,29 @@
     </div>
     
 </template>
+
+<script setup>
+    import axios from "axios";
+    import { ref } from "vue";
+
+    const username = ref('');
+    const email = ref('');
+    const password = ref('');
+
+    const registerUser = async () => {
+        try {
+            await axios.post('http://localhost:3000/register', {
+                username: username.value,
+                email: email.value,
+                password: password.value
+            })
+        }
+        catch (e) {
+            console.log("Registration error: ", e);
+        }
+    }
+
+</script>
 
 <style scoped>
 .register-wrapper {
