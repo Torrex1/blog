@@ -1,14 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import User from "./NewUser.js";
+import cors from "cors";
 
 const app = express();
 const port = 3000;
 const DB_URL = "mongodb+srv://admin:wwwwww@cluster0.ur2f9.mongodb.net/";
 
+app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
     res.send('Hello World!')
 });
 
