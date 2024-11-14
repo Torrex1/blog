@@ -1,17 +1,44 @@
 <template>
     <div class="login-wrapper">
-        <form action="">
+        <form action="#" @submit.prevent="loginUser">
             <h1>Welcome back :D</h1>
 
-            <input type="text" placeholder="username or email">
+            <input v-model="username" type="text" placeholder="username or email">
         
-            <input type="password" placeholder="password">
+            <input v-model="password" type="password" placeholder="password">
             
             <button type="submit">Log in</button>
         </form>
         <span>Don't have an account? <RouterLink to="/registration"><span style="color: green;">Sign up</span></RouterLink></span>
     </div>
 </template>
+
+<script setup>
+    import { ref } from "vue";
+    import axios from "axios";
+
+    const username = ref('');
+    const password = ref('');  
+
+    const loginUser = async () => {
+        try {
+            await axios.post('http://localhost:3000/login', {
+                username: username.value,
+                password: password.value
+            }).then( res => {
+
+                if (res.status === 200) {
+                    window.location.href = "/";
+                } 
+            })
+        }
+        catch(error) {
+            if (error.response.status === 404) {
+                alert("User not found");
+            }
+        }
+    }
+</script>
 
 <style scoped> 
 .login-wrapper {
