@@ -10,9 +10,21 @@ const DB_URL = "mongodb+srv://admin:wwwwww@cluster0.ur2f9.mongodb.net/";
 app.use(cors());
 app.use(express.json());
 
-app.get('/', cors(), (req, res) => {
+
+app.get('/', (req, res) => {
     res.send('Hello World!')
 });
+
+app.post('/login', async (req, res) => {
+    const {username, password, email} = req.body;
+    const user = await User.findOne({ username, password });
+
+    if (!user) {
+        return res.status(404).json({message: "User not found"});
+    } else {
+        return res.status(200).json(user);
+    }
+})
 
 app.post('/register', async (req, res) => {
     const {username, password, email} = req.body;
