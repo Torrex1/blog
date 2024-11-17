@@ -12,34 +12,36 @@ export const login = async (req, res) => {
         } 
     
         const token = jwt.sign(
-            { _id : user._id }, "secret123", { expiresIn: "7d" }
+            { _id: user._id }, 'secret123', { expiresIn: '7d' }
         )
-    
-        res.json({
-            ...user._doc,
-            token,
-        });
+
+        return res.json({
+            token
+        })
     } 
     catch (e) {
         console.log(e);
-        return res.status(500).json({message: "Server error"});
-        
+        return res.status(404).json({message: "incorrect username or password"});
     }
-
 }
 
 export const register = async (req, res) => {
     const {username, password, email} = req.body;
-    const user = new User({username, password, email});
 
-    await user.save();
+    try {
+        const user = new User({username, password, email});
+        await user.save();
 
-    const token = jwt.sign(
-        { _id : user._id }, "secret123", { expiresIn: "7d" }
-    )
+        const token = jwt.sign(
+            { _id: user._id }, 'secret123', { expiresIn: '7d' }
+        )
 
-    res.json({
-        ...user._doc,
-        token,
-    });
+        return res.json({
+            token,
+            user
+        })
+    }
+    catch (e) {
+        return res.status(500).json({error: e.message});
+    }
 }
