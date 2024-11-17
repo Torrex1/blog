@@ -45,3 +45,13 @@ export const register = async (req, res) => {
         return res.status(500).json({error: e.message});
     }
 }
+
+export const protectedFetch = async (req, res) => {
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+        return res.status(404).json({message: "user not found"});
+    }
+    
+    return res.json(user);
+}
